@@ -3,11 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Blog</title>
+  <title>Del's Shack</title>
+  <link rel="icon" type="image/x-icon" href="/images/favicon.gif">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- Header -->
+  <!-- Header
   <header>
     <div class="header-container">
       <nav>
@@ -18,8 +19,13 @@
         <a href="/notes.html">Notes</a>
       </nav>
     </div>
+  </header> -->
+<!-- Header container -->
+  <header>
+    <div class="header-container" id="nav-container">
+      <!-- Nav will be injected here -->
+    </div>
   </header>
-
   <!-- Main content -->
   <main>
     <article>
@@ -74,7 +80,8 @@
 
     // Update the message dynamically on page load
     const statusElement = document.getElementById("status-message");
-    statusElement.textContent = ` ${getRandomActivity()}.`;
+    statusElement.textContent = ` ${getRandomActivity()}`;
   </script>
+  <script src="nav.js"></script>
 </body>
 </html>

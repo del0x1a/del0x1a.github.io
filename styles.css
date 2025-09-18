@@ -82,6 +82,11 @@ header nav a:hover {
   text-decoration: underline;
 }
 
+ header nav a.active {
+    color: #6E4555;        /* Highlight color */
+    text-decoration: underline;
+  }
+
 /* Main content */
 main {
   flex: 1;
