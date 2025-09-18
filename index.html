@@ -24,8 +24,10 @@
   <main>
     <article>
       <h2>Del is <span id="status-message"></span></h2>
-      <p>Hi, I'm a data engineer by trade. I post about various topics that interest me. I use it as a way to solidify what I have learned about
-      a given topic. See it as a form of meditation where I infodump.</p>
+      <p>Hi, I'm a data engineer by trade. My main interest is in real-time systems and performance.</p>
+      <p>This blog is where I post about various topics that I've read about. I use it as a way to solidify what I have learned about
+      a given subject.</p> 
+      <p>You could see it as a form of meditation where I infodump.</p>
     </article>
   </main>
 
@@ -72,7 +74,7 @@
 
     // Update the message dynamically on page load
     const statusElement = document.getElementById("status-message");
-    statusElement.textContent = `Currently ${getRandomActivity()}.`;
+    statusElement.textContent = ` ${getRandomActivity()}.`;
   </script>
 </body>
 </html>

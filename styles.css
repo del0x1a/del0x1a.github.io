@@ -39,7 +39,7 @@ header {
 
 /* Site title */
 .site-title {
-  font-size: 1.75rem;
+  font-size: 2rem;
   font-weight: 600;
   color: #3C6E47; /* forest green */
   margin-bottom: 0.5rem;
@@ -74,6 +74,7 @@ header nav a {
   color: #B08D57; /* Bronze links */
   text-decoration: none;
   font-weight: 600;
+  font-size: 1rem;
 }
 
 header nav a:hover {
@@ -101,7 +102,7 @@ article {
 /* Headings — make them stand out */
 article h2 {
   font-family: "Geist Mono", monospace;
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   margin-bottom: 1.25rem;
   color: #1C1C1C;
   text-transform: uppercase;
@@ -114,7 +115,7 @@ article h2 {
 article p {
   margin: 1.25rem 0;
   font-family: Georgia, serif;
-  font-size: 1rem;
+  font-size: 1.125rem;
   line-height: 1.8;
   color: #1C1C1C;
 }
@@ -161,6 +162,7 @@ article p {
   text-decoration: none;
   font-weight: 500;
   transition: color 0.2s;
+  font-size: 1.125rem;
 }
 
 .notes-list li a:hover {
