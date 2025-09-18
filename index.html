@@ -7,13 +7,14 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
   <!-- Header -->
   <header>
     <div class="header-container">
       <nav>
-        <a href="/about.html">About</a>
-        <a href="/blog.html">Blog</a>
+        <span class="nav-gif">
+          <img src="images/cat-roll.gif" alt="Pixel Art GIF">
+        </span>
+        <a href="/index.html">Me</a>
         <a href="/notes.html">Notes</a>
       </nav>
     </div>
@@ -22,25 +23,9 @@
   <!-- Main content -->
   <main>
     <article>
-      <h2>Welcome to My Blog</h2>
-      <pre>
-                                 /\
-                            /\  //\\
-                     /\    //\\///\\\        /\
-                    //\\  ///\////\\\\  /\  //\\
-       /\          /  ^ \/^ ^/^  ^  ^ \/^ \/  ^ \
-      / ^\    /\  / ^   /  ^/ ^ ^ ^   ^\ ^/  ^^  \
-     /^   \  / ^\/ ^ ^   ^ / ^  ^    ^  \/ ^   ^  \       *
-    /  ^ ^ \/^  ^\ ^ ^ ^   ^  ^   ^   ____  ^   ^  \     /|\
-   / ^ ^  ^ \ ^  _\___________________|  |_____^ ^  \   /||o\
-  / ^^  ^ ^ ^\  /______________________________\ ^ ^ \ /|o|||\
- /  ^  ^^ ^ ^  /________________________________\  ^  /|||||o|\
-/^ ^  ^ ^^  ^    ||___|___||||||||||||___|__|||      /||o||||||\
- / ^   ^   ^    ^  ||___|___||||||||||||___|__|||          | |
-/ ^ ^ ^  ^  ^  ^   ||||||||||||||||||||||||||||||oooooooooo| |ooooooo
-ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
-      </pre>
-      <p>This is where your blog posts will appear. You can write long-form articles, essays, or notes here. The layout is kept simple and centered for readability.</p>
+      <h2>Del is <span id="status-message"></span></h2>
+      <p>Hi, I'm a data engineer by trade. I post about various topics that interest me. I use it as a way to solidify what I have learned about
+      a given topic. See it as a form of meditation where I infodump.</p>
     </article>
   </main>
 
@@ -48,19 +33,46 @@ ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
   <footer>
     &copy; 2025 My Blog. All rights reserved.
   </footer> -->
+
   <!-- Social Media Links -->
-<div class="social-links">
-  <a href="https://github.com/yourusername" target="_blank" aria-label="GitHub">
-    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" alt="GitHub" />
-  </a>
-  <a href="https://twitter.com/yourusername" target="_blank" aria-label="Twitter">
-    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/twitter.svg" alt="Twitter" />
-  </a>
-  <a href="https://linkedin.com/in/yourusername" target="_blank" aria-label="LinkedIn">
-    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn" />
-  </a>
-</div>
+  <div class="social-links">
+    <a href="https://github.com/yourusername" target="_blank" aria-label="GitHub">
+      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" alt="GitHub" />
+    </a>
+    <a href="https://twitter.com/yourusername" target="_blank" aria-label="Twitter">
+      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/twitter.svg" alt="Twitter" />
+    </a>
+    <a href="https://linkedin.com/in/yourusername" target="_blank" aria-label="LinkedIn">
+      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn" />
+    </a>
+  </div>
 
+  <!-- Script at the end of body so DOM elements exist -->
+  <script>
+    // Array of possible activities with emojis
+    const activities = [
+      "reading a book 📖",
+      "writing some code 💻",
+      "drinking coffee ☕",
+      "listening to music 🎵",
+      "taking a walk 🚶",
+      "thinking about life 🤔",
+      "learning something new 🧠",
+      "planning the next project 📝",
+      "exploring the outdoors 🌳",
+      "playing a game 🎮",
+      "praising the sun 🌞"
+    ];
 
+    // Function to pick a random activity
+    function getRandomActivity() {
+      const index = Math.floor(Math.random() * activities.length);
+      return activities[index];
+    }
+
+    // Update the message dynamically on page load
+    const statusElement = document.getElementById("status-message");
+    statusElement.textContent = `Currently ${getRandomActivity()}.`;
+  </script>
 </body>
 </html>

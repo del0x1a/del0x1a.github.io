@@ -4,15 +4,25 @@ body, h1, h2, p {
   padding: 0;
 }
 
-/* Base styles */
+html {
+    font-family: "Geist Mono", monospace;
+
+}
+
+/* Base background */
 body {
-  font-family: Georgia, "Times New Roman", serif;
-  line-height: 1.6;
-  color: #2F2F2F;           /* deep charcoal text */
-  display: flex;
+  font-family: "Geist Mono", monospace;
+  line-height: 1.7;
+  color: #1C1C1C; /* Ink Black */
+  /* display: flex; */
   flex-direction: column;
   min-height: 100vh;
-  background-color: #FAF3E0; /* soft cream background */
+  background-color: #F5F1E6; /* unified parchment */
+  background-image: 
+    radial-gradient(rgba(0,0,0,0.02) 1px, transparent 1px),
+    radial-gradient(rgba(0,0,0,0.015) 1px, transparent 1px);
+  background-size: 5px 5px, 8px 8px;
+  background-position: 0 0, 3px 3px;
 }
 
 /* Header */
@@ -22,68 +32,91 @@ header {
 
 /* Header container aligns everything */
 .header-container {
-  max-width: 700px;
+  max-width: 750px;
   margin: 0 auto;
-  padding: 2rem; /* same padding everywhere */
+  padding: 1rem 2rem 1rem 1rem; 
 }
 
 /* Site title */
 .site-title {
   font-size: 1.75rem;
   font-weight: 600;
-  color: #2F2F2F; /* deep charcoal */
+  color: #3C6E47; /* forest green */
   margin-bottom: 0.5rem;
 }
+/* Header & Footer */
+header {
+  color: #B08D57; /* Aged Bronze */
+  padding: 1.5rem;
+}
 
-/* Navigation links */
+/* Nav links layout */
 header nav {
+  font-family: "Geist Mono", monospace;
   display: flex;
-  justify-content: flex-start; /* align links with title/article */
-  gap: 1.5rem;
+  justify-content: flex-start;
+  align-items: center; /* vertically center links + GIF */
+  gap: 1rem;
   margin-top: 0.25rem;
+  padding-left: 2rem;
+}
+
+/* Pixel GIF styling */
+.nav-gif img {
+  width: 36px; /* adjust size as needed */
+  height: 36px;
+  image-rendering: pixelated; /* keeps it crisp */
+  display: inline-block;
+  vertical-align: middle;
 }
 
 header nav a {
+  color: #B08D57; /* Bronze links */
   text-decoration: none;
-  color: #2F2F2F;
-  font-size: 1.25rem;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 header nav a:hover {
-  color: #B08968;  /* earthy brown-pink on hover */
+  color: #6E4555; /* Wine Plum on hover */
   text-decoration: underline;
 }
 
 /* Main content */
 main {
   flex: 1;
-  max-width: 700px;
+  max-width: 750px;
   margin: 0 auto;
 }
 
+/* Article now just flows on the parchment */
 article {
-  /* padding: 2rem; matches header-container padding */
-  background-color: #FAF3E0;
+  max-width: 750px;
+  margin: 0 auto; /* remove top margin */
+  padding: 0 2rem;
+  background: transparent; /* blends into background */
+  border: none;
+  box-shadow: none;
 }
 
+/* Headings — make them stand out */
 article h2 {
-  margin-bottom: 1rem;
+  font-family: "Geist Mono", monospace;
   font-size: 1.5rem;
+  margin-bottom: 1.25rem;
+  color: #1C1C1C;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-bottom: 2px solid #B08D57; /* bronze underline */
+  padding-bottom: 0.5rem;
 }
 
-article p + p {
-  margin-top: 1rem;
-}
-
-/* Footer */
-footer {
-  background-color: #DAB785; /* warm tan */
-  border-top: 1px solid #B08968;
-  padding: 1rem;
-  text-align: center;
-  font-size: 0.9rem;
-  color: #2F2F2F; /* deep charcoal */
+/* Paragraphs */
+article p {
+  margin: 1.25rem 0;
+  font-family: Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #1C1C1C;
 }
 
 /* Social links floating in the lower-right corner (horizontal) */
@@ -110,10 +143,13 @@ footer {
 }
 
 
+/* Notes list aligned with article */
 .notes-list {
   list-style: none;
-  padding: 0;
-  margin-top: 1rem;
+  margin: 1rem auto 0 auto; /* top margin, horizontally centered container */
+  max-width: 750px;         /* same as article */
+  padding: 0;               /* remove extra padding */
+  text-align: left;         /* left-align text */
 }
 
 .notes-list li {
