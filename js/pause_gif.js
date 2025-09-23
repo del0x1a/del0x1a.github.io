@@ -3,13 +3,15 @@ function pauseGif() {
 
     // store original and still src
 
-    var animatedSrc = "images/cat-roll.gif";
-    var stillSrc = "images/cat-roll-frame20.png";
-
-    if (window.location.pathname == "/notes/index.html") {
+    let animatedSrc, stillSrc;
+    if (window.location.pathname.startsWith("/notes/")) {
         animatedSrc = "../images/cat-roll.gif";
         stillSrc = "../images/cat-roll-frame20.png";
+    } else {
+        animatedSrc = "images/cat-roll.gif";
+        stillSrc = "images/cat-roll-frame20.png";
     }
+
 
     let isPaused = false;
 
