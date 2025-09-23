@@ -2,7 +2,7 @@ function pauseGif() {
     const gif = document.getElementById("nav-gif");
 
     // store original and still src
-
+    console.log(window.location.pathname);
     let animatedSrc, stillSrc;
     if (window.location.pathname.startsWith("/notes/")) {
         animatedSrc = "../images/cat-roll.gif";
