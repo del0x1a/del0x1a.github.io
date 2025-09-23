@@ -1,3 +1,23 @@
+ function pauseGif() {
+  const gif = document.getElementById("nav-gif");
+
+// store original and still src
+const animatedSrc = "images/cat-roll.gif";
+const stillSrc = "images/cat-roll-frame20.png";
+
+let isPaused = false;
+
+gif.addEventListener("click", () => {
+  if (isPaused) {
+    gif.src = animatedSrc; // play GIF
+  } else {
+    gif.src = stillSrc;    // pause GIF
+  }
+  isPaused = !isPaused;
+});
+
+}
+ 
  
  function currentActivity() {
   // Array of possible activities with emojis
@@ -28,3 +48,4 @@
  } 
 
  currentActivity();
+ pauseGif();
