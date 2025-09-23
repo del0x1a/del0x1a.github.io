@@ -58,6 +58,7 @@ def build():
         contexts=[
             ("index.html", lambda: {}),  # landing page
             ("notes_index.html", lambda: {"notes": notes}),  # notes list
+            ("bookshelf.html", lambda: {}),
         ],
         rules=[(".*", lambda env, template, **kw: None)],  # disable auto
     )
@@ -65,19 +66,28 @@ def build():
     # Render individual notes
     for note in notes:
         template = site.get_template("note.html")
-        rendered = template.render(note=note, current_page="/notes/index.html")
+        rendered = template.render(note=note, current_page="/notes/index")
         (OUTPUT_DIR / "notes" / note["filename"]).write_text(rendered, encoding="utf-8")
 
+    notes_for_index = []
+    for note in notes:
+        note_copy = note.copy()
+        if note_copy["filename"].endswith(".html"):
+            note_copy["filename"] = note_copy["filename"][:-5]  # strip ".html"
+        notes_for_index.append(note_copy)
     # Render notes index
     template = site.get_template("notes_index.html")
     (OUTPUT_DIR / "notes" / "index.html").write_text(
-        template.render(notes=notes, current_page="/notes/index.html"), encoding="utf-8"
+        template.render(notes=notes_for_index, current_page="/notes/index"), encoding="utf-8"
     )
 
     # Render landing page
     template = site.get_template("index.html")
-    (OUTPUT_DIR / "index.html").write_text(template.render(baseurl="", current_page="/index.html"), encoding="utf-8")
+    (OUTPUT_DIR / "index.html").write_text(template.render(baseurl="", current_page="/index"), encoding="utf-8")
 
+    template = site.get_template("bookshelf.html")
+    (OUTPUT_DIR / "bookshelf.html").write_text(template.render(baseurl="", current_page="/bookshelf"), encoding="utf-8")
+    
     # Copy static assets
     copy_static()
 
