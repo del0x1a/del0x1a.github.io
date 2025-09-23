@@ -48,4 +48,3 @@ gif.addEventListener("click", () => {
  } 
 
  currentActivity();
- pauseGif();
