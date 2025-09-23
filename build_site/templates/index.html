@@ -1,42 +1,7 @@
 
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Del's kiosk</title>
-  <link rel="icon" type="image/x-icon" href="/images/favicon.gif">
-<link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <header>
-    <div class="header-container" id="nav-container">
-      <nav class="header-nav">
-  <span class="nav-gif">
-    <img src="/images/cat-roll.gif"
-         alt="Pixel Art GIF"
-         width="36"
-         height="36">
-  </span>
-
-  
-
-  
-    <a href="/index.html"
-       class="active">
-      Me
-    </a>
-  
-    <a href="/notes/index.html"
-       class="">
-      Notes
-    </a>
-  
-</nav>
-    </div>
-  </header>
-    
+{% extends "base.html" %}
+{% block content %}
 <main>
     <article>
       <h2>Del is <span id="status-message"></span></h2>
@@ -57,7 +22,4 @@
       <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn" />
     </a>
   </div>
-  
-  <script src="js/curr_act.js"></script>
-</body>
-</html>
+  {% endblock %}

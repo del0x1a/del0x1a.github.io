@@ -1,0 +1,20 @@
+<nav class="header-nav">
+  <span class="nav-gif">
+    <img src="{{ baseurl }}/images/cat-roll.gif"
+         alt="Pixel Art GIF"
+         width="36"
+         height="36">
+  </span>
+
+  {% set nav_links = [
+    {"href": baseurl ~ "/index.html", "text": "Me"},
+    {"href": baseurl ~ "/notes/index.html", "text": "Notes"}
+  ] %}
+
+  {% for link in nav_links %}
+    <a href="{{ link.href }}"
+       class="{% if current_page == link.href %}active{% endif %}">
+      {{ link.text }}
+    </a>
+  {% endfor %}
+</nav>

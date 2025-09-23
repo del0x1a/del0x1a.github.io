@@ -1,7 +1,7 @@
 // Nav links data
 const navLinksData = [
   { href: "/index.html", text: "Me" },
-  { href: "/notes.html", text: "Notes" },
+  { href: "/notes/index.html", text: "Notes" },
 ];
 
 // Function to generate nav
