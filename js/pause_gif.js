@@ -1,9 +1,9 @@
 function pauseGif() {
     const gif = document.getElementById("nav-gif");
 
-    // store original and still src depending on path
+    // Pick correct paths depending on current location
     let animatedSrc, stillSrc;
-    if (window.location.pathname.startsWith("/notes/")) {
+    if (window.location.pathname.includes("/notes/")) {
         animatedSrc = "../images/cat-roll.gif";
         stillSrc = "../images/cat-roll-frame20.png";
     } else {
@@ -11,20 +11,20 @@ function pauseGif() {
         stillSrc = "images/cat-roll-frame20.png";
     }
 
-    // Load state from localStorage (default: not paused)
-    let isPaused = localStorage.getItem("gifPaused") === "true";
+    // Restore state from sessionStorage (default: false)
+    let isPaused = sessionStorage.getItem("gifPaused") === "true";
 
-    // Set initial src based on saved state
+    // Set the correct image immediately
     gif.src = isPaused ? stillSrc : animatedSrc;
 
-    // Toggle on click and persist
+    // Toggle on click and persist to sessionStorage
     gif.addEventListener("click", () => {
         if (isPaused) {
-            gif.src = animatedSrc; // play GIF
-            localStorage.setItem("gifPaused", "false");
+            gif.src = animatedSrc;
+            sessionStorage.setItem("gifPaused", "false");
         } else {
-            gif.src = stillSrc; // pause GIF
-            localStorage.setItem("gifPaused", "true");
+            gif.src = stillSrc;
+            sessionStorage.setItem("gifPaused", "true");
         }
         isPaused = !isPaused;
     });
