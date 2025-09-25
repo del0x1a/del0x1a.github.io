@@ -85,7 +85,56 @@ header nav a:hover {
  header nav a.active {
     color: #6E4555;        /* Highlight color */
     text-decoration: underline;
-  }
+}
+
+.status-footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #E8DDC8; /* slightly darker parchment */
+  color: #2c1b0e;            /* deep brown text */
+  border-top: 2px solid #d4b575;
+  padding: 8px 24px;
+  box-sizing: border-box;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between; /* status left, icons right */
+  align-items: center;
+}
+
+.footer-status {
+  font-size: 0.9rem;
+  font-style: italic;
+  white-space: nowrap;
+}
+
+.footer-social {
+  display: flex;
+  align-items: center;
+  gap: 16px;      /* spacing between icons */
+}
+
+.footer-social a img {
+  width: 24px;
+  height: 24px;
+  filter: grayscale(100%);
+  transition: filter 0.2s, transform 0.2s;
+  cursor: pointer;
+}
+
+.footer-social a img:hover {
+  filter: grayscale(0%);
+  transform: scale(1.2);
+}
+
+
+
+
 
 /* Main content */
 main {

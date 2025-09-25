@@ -14,8 +14,8 @@
     </div>
   </header>
     {% block content %}{% endblock %}
+    {% include "_footer.html"%}
+
   <script src="{% if note or notes %}../js/pause_gif.js{% else %}js/pause_gif.js{% endif %}"></script>
-
-
 </body>
 </html>
