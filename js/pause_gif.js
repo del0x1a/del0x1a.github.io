@@ -12,6 +12,7 @@ function pauseGif() {
     }
 
     // Restore state from sessionStorage (default: false)
+    sessionStorage.setItem("gifPaused", "true");
     let isPaused = sessionStorage.getItem("gifPaused") === "true";
 
     // Set the correct image immediately
@@ -21,7 +22,7 @@ function pauseGif() {
     gif.addEventListener("click", () => {
         if (isPaused) {
             gif.src = animatedSrc;
-            sessionStorage.setItem("gifPaused", "false");
+            sessionStorage.setItem("gifPaused", "true");
         } else {
             gif.src = stillSrc;
             sessionStorage.setItem("gifPaused", "true");
