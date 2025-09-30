@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Play DOOM in Browser</title>
+  <script src="https://cdn.jsdelivr.net/npm/js-dos@6.22.59/dist/js-dos.js"></script>
+  <link rel="stylesheet" href="https://v8.js-dos.com/latest/js-dos.css">
+  <style>
+    body { margin: 0; background: black; display: flex; justify-content: center; align-items: center; height: 100vh; }
+    #dosbox { width: 800px; height: 600px; }
+  </style>
+</head>
+<body>
+  <div id="dosbox"></div>
+  <script>
+    Dos(document.getElementById("dosbox"), {
+      wdosboxUrl: "https://cdn.jsdelivr.net/npm/js-dos@6.22.59/dist/wdosbox.js"
+    }).ready((fs, main) => {
+      fs.extract("DOOM.zip").then(() => {
+        main(["-c", "GAME", "-c", "FDOOM.exe"]);
+      });
+    });
+  </script>
+</body>
+</html>

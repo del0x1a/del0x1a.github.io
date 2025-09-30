@@ -88,6 +88,9 @@ def build():
     template = site.get_template("bookshelf.html")
     (OUTPUT_DIR / "bookshelf.html").write_text(template.render(baseurl="", current_page="/bookshelf"), encoding="utf-8")
     
+    template = site.get_template("birb.html")
+    (OUTPUT_DIR / "birb.html").write_text(template.render(baseurl="", current_page="/???"), encoding="utf-8")
+
     # Copy static assets
     copy_static()
 
