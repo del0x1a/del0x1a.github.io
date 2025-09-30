@@ -1,25 +1,38 @@
-<!DOCTYPE html>
-<html>
+{% extends "base.html" %}
+{% block content %}
 <head>
   <meta charset="utf-8">
-  <title>Play DOOM in Browser</title>
-  <script src="https://cdn.jsdelivr.net/npm/js-dos@6.22.59/dist/js-dos.js"></script>
-  <link rel="stylesheet" href="https://v8.js-dos.com/latest/js-dos.css">
+  <title>Play DOOM</title>
+
+  <!-- js-dos v6 -->
+  <link rel="stylesheet" href="js-dos.css">
+  <script src="js-dos.js"></script>
+
   <style>
-    body { margin: 0; background: black; display: flex; justify-content: center; align-items: center; height: 100vh; }
-    #dosbox { width: 800px; height: 600px; }
+    #dosbox {
+        width: 100%;        /* scale to full container width */
+        height: auto;       /* maintain aspect ratio */
+        max-width: 1400px;  /* optional max width */
+        border: 2px solid #444;
+        border-radius: 8px;
+        box-shadow: 0 0 20px rgba(0,0,0,0.7);
+}
   </style>
 </head>
+<main>
 <body>
-  <div id="dosbox"></div>
+  <!-- Use a canvas, not a div -->
+  <canvas id="dosbox" width="1200" height="900"></canvas>
+
   <script>
     Dos(document.getElementById("dosbox"), {
-      wdosboxUrl: "https://cdn.jsdelivr.net/npm/js-dos@6.22.59/dist/wdosbox.js"
+      wdosboxUrl: "wdosbox.js"
     }).ready((fs, main) => {
       fs.extract("DOOM.zip").then(() => {
-        main(["-c", "GAME", "-c", "FDOOM.exe"]);
+        main(["-c", "cd GAME", "-c", "FDOOM.exe"]);
       });
     });
   </script>
 </body>
-</html>
+</main>
+{% endblock %}

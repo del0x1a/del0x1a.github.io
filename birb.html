@@ -1,25 +1,109 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Play DOOM in Browser</title>
-  <script src="https://cdn.jsdelivr.net/npm/js-dos@6.22.59/dist/js-dos.js"></script>
-  <link rel="stylesheet" href="https://v8.js-dos.com/latest/js-dos.css">
-  <style>
-    body { margin: 0; background: black; display: flex; justify-content: center; align-items: center; height: 100vh; }
-    #dosbox { width: 800px; height: 600px; }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Del's kiosk</title>
+  <link rel="icon" type="image/x-icon" href="/images/favicon.gif">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div id="dosbox"></div>
+  <header>
+    <div class="header-container" id="nav-container">
+      <nav class="header-nav">
+  <span class="nav-gif">
+    <img src="/images/cat-roll-frame20.png"
+         id="nav-gif"
+         alt="Pixel Art GIF"
+         width="36"
+         height="36"
+         style="cursor:pointer;">
+  </span>
+
+  
+
+  
+    <a href="/index"
+       class="">
+      Me
+    </a>
+  
+    <a href="/notes/index"
+       class="">
+      Notes
+    </a>
+  
+    <a href="/bookshelf"
+       class="">
+      Bookshelf
+    </a>
+  
+    <a href="/birb"
+       class="">
+      ???
+    </a>
+  
+</nav>
+    </div>
+  </header>
+    
+<head>
+  <meta charset="utf-8">
+  <title>Play DOOM</title>
+
+  <!-- js-dos v6 -->
+  <link rel="stylesheet" href="js-dos.css">
+  <script src="js-dos.js"></script>
+
+  <style>
+    #dosbox {
+        width: 100%;        /* scale to full container width */
+        height: auto;       /* maintain aspect ratio */
+        max-width: 1400px;  /* optional max width */
+        border: 2px solid #444;
+        border-radius: 8px;
+        box-shadow: 0 0 20px rgba(0,0,0,0.7);
+}
+  </style>
+</head>
+<main>
+<body>
+  <!-- Use a canvas, not a div -->
+  <canvas id="dosbox" width="1200" height="900"></canvas>
+
   <script>
     Dos(document.getElementById("dosbox"), {
-      wdosboxUrl: "https://cdn.jsdelivr.net/npm/js-dos@6.22.59/dist/wdosbox.js"
+      wdosboxUrl: "wdosbox.js"
     }).ready((fs, main) => {
       fs.extract("DOOM.zip").then(() => {
-        main(["-c", "GAME", "-c", "FDOOM.exe"]);
+        main(["-c", "cd GAME", "-c", "FDOOM.exe"]);
       });
     });
   </script>
+</body>
+</main>
+
+    <footer class="status-footer">
+  <div class="footer-container">
+    <div class="footer-status">
+      ✨ Currently: <span id="status-message"></span>
+    </div>
+    <div class="footer-social">
+      <a href="https://github.com/yourusername" target="_blank" aria-label="GitHub">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" alt="GitHub" />
+      </a>
+      <a href="https://twitter.com/yourusername" target="_blank" aria-label="Twitter">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/twitter.svg" alt="Twitter" />
+      </a>
+      <a href="https://linkedin.com/in/yourusername" target="_blank" aria-label="LinkedIn">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn" />
+      </a>
+    </div>
+  </div>
+</footer>
+  <script src="js/curr_act.js"></script>
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="3191ee62-7777-4372-bb11-a3045a55c24a"></script>
+  <script src="js/pause_gif.js"></script>
 </body>
 </html>
