@@ -228,6 +228,10 @@ article p {
   text-decoration-color: violet;
 }
 
+.social-link.umami {
+  text-decoration-color: purple;
+}
+
 /* Optional — Responsive tweak */
 @media (max-width: 600px) {
   .social-links {
