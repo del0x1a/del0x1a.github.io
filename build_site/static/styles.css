@@ -115,18 +115,6 @@ header nav a.active {
   gap: 16px;
 }
 
-.footer-social a img {
-  width: 24px;
-  height: 24px;
-  filter: grayscale(100%);
-  transition: filter 0.2s, transform 0.2s;
-  cursor: pointer;
-}
-
-.footer-social a img:hover {
-  filter: grayscale(0%);
-  transform: scale(1.2);
-}
 
 /* MOBILE STYLES */
 @media (max-width: 600px) {
@@ -208,28 +196,6 @@ article p {
   text-decoration: underline;
 }
 
-/* Social links floating in the lower-right corner
-.social-links {
-  position: fixed;
-  bottom: 2rem;
-  right: 2rem;
-  display: flex;
-  flex-direction: row;
-  gap: 1rem;
-  z-index: 1000;
-}
-
-.social-links a img {
-  width: 20px;
-  height: 20px;
-  filter: grayscale(100%);
-  transition: filter 0.2s, transform 0.2s;
-}
-
-.social-links a img:hover {
-  filter: grayscale(0%);
-  transform: scale(1.1);
-} */
 
 /* Social Links Section */
 .social-links {
@@ -280,21 +246,30 @@ article p {
   text-align: right;
 }
 
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
 .footer-copy {
-  font-size: 0.9rem;
-  text-align: center;
   flex: 1;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #F5F1E6; /* light parchment */
+  margin: 0.25rem 0;
 }
 
 .footer-copy a {
-  color: #F5F1E6;
+  color: #F5F1E6; /* match footer text */
   text-decoration: none;
   transition: color 0.2s ease, border-color 0.2s ease;
 }
 
 .footer-copy a:hover {
-  color: #B08D57; /* bronze hover */
-  border-color: #F5F1E6; /* invert underline */
+  color: #B08D57;           /* bronze text on hover */
+  border-color: #F5F1E6;    /* invert underline for subtle effect */
 }
 
 
