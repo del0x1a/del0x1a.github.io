@@ -208,7 +208,7 @@ article p {
   text-decoration: underline;
 }
 
-/* Social links floating in the lower-right corner */
+/* Social links floating in the lower-right corner
 .social-links {
   position: fixed;
   bottom: 2rem;
@@ -229,4 +229,68 @@ article p {
 .social-links a img:hover {
   filter: grayscale(0%);
   transform: scale(1.1);
+} */
+
+/* Social Links Section */
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  margin: 2rem 0;
 }
+
+.social-link {
+  font-family: "Geist Mono", monospace;
+  font-weight: 600;
+  color: #2F4F4F; /* Forest Green base */
+  text-decoration: none;
+  position: relative;
+  font-size: 1rem;
+  transition: color 0.2s ease;
+}
+
+/* .social-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background-color: currentColor;
+} */
+
+
+/* Underline color variations matching the hover */
+.social-link.github {
+  text-decoration: underline;
+  text-decoration-color: #E1306C;
+}
+
+.social-link.email {
+  text-decoration: underline;
+  text-decoration-color: #0077B5;
+}
+
+.social-link.itch {
+  text-decoration: underline;
+  text-decoration-color: violet;
+}
+
+/* Optional — Responsive tweak */
+@media (max-width: 600px) {
+  .social-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+}
+
+.footer-timezone {
+  font-size: 0.9rem;
+  font-style: italic;
+  color: #F5F1E6; /* light parchment tone */
+  white-space: nowrap;
+  margin-left: auto;
+  text-align: right;
+}
+
