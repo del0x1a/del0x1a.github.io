@@ -243,24 +243,22 @@ article p {
   font-family: "Geist Mono", monospace;
   font-weight: 600;
   color: #2F4F4F; /* Forest Green base */
-  text-decoration: none;
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
   position: relative;
   font-size: 1rem;
   transition: color 0.2s ease;
 }
 
 .social-link.github {
-  text-decoration: underline;
   text-decoration-color: #E1306C;
 }
 
 .social-link.email {
-  text-decoration: underline;
   text-decoration-color: #0077B5;
 }
 
 .social-link.itch {
-  text-decoration: underline;
   text-decoration-color: violet;
 }
 
